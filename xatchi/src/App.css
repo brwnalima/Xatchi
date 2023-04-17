@@ -225,12 +225,13 @@ img {
   }
 
   .App header {
+    position: fixed;
     max-width: 77.7%;
     margin: 0;
   }
 
   .App, .App header {
-    margin-top: 50px;
+    margin-top: 20px;
   }
 
   .App section {
