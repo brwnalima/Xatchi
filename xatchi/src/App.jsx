@@ -4,7 +4,7 @@ import { useCollectionData } from "react-firebase-hooks/firestore";
 import { auth, databaseApp } from "./services/firebaseConfig"
 
 import './App.css'
-import { useState } from "react"
+import { useRef, useState } from "react"
 
 export const App = () => {
 
@@ -25,6 +25,7 @@ export const App = () => {
 }
 
 export const ChatRoom = () => {
+  const dummy = useRef
   const messageRef = collection(databaseApp, "messages")
   const queryMessages = query(messageRef, orderBy("createdAt"), limit(25))
   const [messages] = useCollectionData(queryMessages, { idField: "id" })
@@ -42,6 +43,7 @@ export const ChatRoom = () => {
       createdAt: serverTimestamp()
     })
     setFormValue("")
+    dummy.current.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
@@ -51,6 +53,7 @@ export const ChatRoom = () => {
         {messages && messages.map((msg, index) => 
           (<ChatMessage key={index} message={msg} />
         ))}
+        <div ref={dummy}/>
       </main>
 
       <form onSubmit={sendMessage}>
