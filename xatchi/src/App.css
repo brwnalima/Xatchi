@@ -1,5 +1,54 @@
+
+@-webkit-keyframes Animationgrad {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@-moz-keyframes Animationgrad {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes Animationgrad {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/*---------------------------------------*/
+
 body {
-  background-color: #282c34;
+  background: linear-gradient(270deg, #60489d, #4260ad, #46bb93, #60489d);
+  background-size: 800% 800%;
+  -webkit-animation: Animationgrad 42s ease infinite;
+  -moz-animation: Animationgrad 42s ease infinite;
+  animation: Animationgrad 42s ease infinite;
 }
 
 .App {
@@ -9,10 +58,10 @@ body {
 }
 
 .App header {
-  background-color: #181717;
+  font-family: Arial, Helvetica, sans-serif;
   height: 10vh;
   min-height: 50px;
-  color: white;
+  color: black;
   position: fixed;
   width: 100%;
   max-width: 600px;
@@ -23,6 +72,12 @@ body {
   z-index: 99;
   padding: 10px;
   box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.392);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  box-shadow: 0px 11px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .App section {
@@ -30,7 +85,7 @@ body {
   flex-direction: column;
   justify-content: center;
   min-height: 80vh;
-  background-color: rgb(40, 37, 53);
+  background-color: #e3e3e3;
 }
 
 main {
@@ -58,7 +113,7 @@ form {
   height: 10vh;
   position: fixed;
   bottom: 0;
-  background-color: rgb(24, 23, 23);
+  background: rgb(58, 58, 58);
   width: 100%;
   max-width: 600px;
   display: flex;
@@ -66,8 +121,10 @@ form {
 }
 
 form button {
-  width: 20%;
-  background-color: rgb(56, 56, 143);
+  font-weight: 500;
+  font-size: 16px;
+  background-color: #60489d;
+  border-radius: 1px;
 }
 
 input {
@@ -79,12 +136,15 @@ input {
   outline: none;
   border: none;
   padding: 0 10px;
+  
 }
 
 button {
-  background-color: #282c34; /* Green */
+  background-color: #282c34;
+  border-radius: 50px;
   border: none;
   color: white;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.127);
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -136,6 +196,7 @@ p {
   background: #0b93f6;
   align-self: flex-end;
 }
+
 .received p {
   background: #e5e5ea;
   color: black;

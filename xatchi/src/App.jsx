@@ -25,7 +25,7 @@ export const App = () => {
 }
 
 export const ChatRoom = () => {
-  const dummy = useRef
+  const dummy = useRef()
   const messageRef = collection(databaseApp, "messages")
   const queryMessages = query(messageRef, orderBy("createdAt"), limit(25))
   const [messages] = useCollectionData(queryMessages, { idField: "id" })
@@ -53,7 +53,7 @@ export const ChatRoom = () => {
         {messages && messages.map((msg, index) => 
           (<ChatMessage key={index} message={msg} />
         ))}
-        <div ref={dummy}/>
+        <div ref={dummy}></div>
       </main>
 
       <form onSubmit={sendMessage}>
